@@ -63,7 +63,7 @@
         <!-- Daily Log -->
         <section id="daily" class="bg-slate-900 text-white p-8 rounded-xl text-center">
             <h3 class="text-sm font-light uppercase tracking-widest mb-4 opacity-70">도덕경 일일 생활 실천</h3>
-            <p class="text-xl md:text-2xl font-light">"상선약수(上善若水), 물은 만물을 이롭게 하되 다투지 않는다."</p>
+            <p id="daily-quote" class="text-xl md:text-2xl font-light">Loading...</p>
         </section>
 
     </main>
@@ -73,6 +73,24 @@
         <p>Contact: jykim2252@gmail.com</p>
         <p class="mt-2">&copy; 2026 JangKIM. All rights reserved.</p>
     </footer>
+<script>
+    const dailyQuotes = [
+        "상선약수(上善若水), 물은 만물을 이롭게 하되 다투지 않는다.",
+        "천하의 어려운 일은 반드시 쉬운 일에서 시작된다.",
+        "남을 아는 자는 지혜롭고, 스스로를 아는 자는 명철하다.",
+        "남을 이기는 자는 힘이 있으나, 스스로를 이기는 자는 강하다.",
+        "지족불욕(知足不辱), 만족할 줄 아는 사람은 욕됨이 없다."
+    ];
 
+    // 날짜를 기준으로 오늘의 인덱스 결정
+    const today = new Date();
+    const index = today.getDate() % dailyQuotes.length;
+    
+    // HTML 요소에 반영
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("daily-quote").innerText = dailyQuotes[index];
+    });
+</script>
+    
 </body>
 </html>

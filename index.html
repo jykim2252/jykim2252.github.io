@@ -12,7 +12,6 @@
 </head>
 <body class="bg-slate-50 text-slate-800">
 
-    <!-- Header -->
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
         <nav class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-xl font-bold text-slate-900">JangKIM</h1>
@@ -26,7 +25,6 @@
 
     <main class="max-w-5xl mx-auto px-6 py-12 space-y-20">
         
-        <!-- Hero Section -->
         <section class="text-center py-12">
             <h2 class="text-3xl md:text-4xl font-light text-slate-900 mb-4">안전-필수 소프트웨어 검증 및 확인</h2>
             <p class="text-slate-600 mb-6">기준, 절차 및 방법론을 연구하는 아카이브입니다.</p>
@@ -35,20 +33,12 @@
             </a>
         </section>
 
-        <!-- Recent Updates (News) -->
         <section id="news">
             <h3 class="text-2xl font-bold mb-8 border-l-4 border-slate-900 pl-4">미국 실리콘밸리 AI 뉴스</h3>
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- 뉴스 카드 입력 영역 -->
-                <div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm">
-                    <h4 class="font-bold mb-2">실리콘밸리 AI 동향 리포트</h4>
-                    <p class="text-sm text-slate-600 mb-4">최신 인공지능 안전성 및 규제 관련 뉴스 요약이 여기에 게시됩니다.</p>
-                    <a href="#" class="text-blue-700 text-sm font-semibold hover:underline">Read More →</a>
+            <div id="news-container" class="grid md:grid-cols-2 gap-6">
                 </div>
-            </div>
         </section>
 
-        <!-- Research Archive -->
         <section id="research">
             <h3 class="text-2xl font-bold mb-8 border-l-4 border-slate-900 pl-4">연구 아카이브</h3>
             <div class="grid md:grid-cols-2 gap-6">
@@ -60,7 +50,6 @@
             </div>
         </section>
 
-        <!-- Daily Log -->
         <section id="daily" class="bg-slate-900 text-white p-8 rounded-xl text-center">
             <h3 class="text-sm font-light uppercase tracking-widest mb-4 opacity-70">도덕경 일일 생활 실천</h3>
             <p id="daily-quote" class="text-xl md:text-2xl font-light">Loading...</p>
@@ -68,29 +57,49 @@
 
     </main>
 
-    <!-- Footer -->
     <footer class="border-t border-slate-200 mt-20 py-8 text-center text-sm text-slate-500">
         <p>Contact: jykim2252@gmail.com</p>
         <p class="mt-2">&copy; 2026 JangKIM. All rights reserved.</p>
     </footer>
-<script>
-    const dailyQuotes = [
-        "상선약수(上善若水), 물은 만물을 이롭게 하되 다투지 않는다.",
-        "천하의 어려운 일은 반드시 쉬운 일에서 시작된다.",
-        "남을 아는 자는 지혜롭고, 스스로를 아는 자는 명철하다.",
-        "남을 이기는 자는 힘이 있으나, 스스로를 이기는 자는 강하다.",
-        "지족불욕(知足不辱), 만족할 줄 아는 사람은 욕됨이 없다."
-    ];
 
-    // 날짜를 기준으로 오늘의 인덱스 결정
-    const today = new Date();
-    const index = today.getDate() % dailyQuotes.length;
-    
-    // HTML 요소에 반영
-    document.addEventListener("DOMContentLoaded", function() {
-        document.getElementById("daily-quote").innerText = dailyQuotes[index];
-    });
-</script>
-    
+    <script>
+        // 1. 도덕경 데이터
+        const dailyQuotes = [
+            "상선약수(上善若水), 물은 만물을 이롭게 하되 다투지 않는다.",
+            "천하의 어려운 일은 반드시 쉬운 일에서 시작된다.",
+            "남을 아는 자는 지혜롭고, 스스로를 아는 자는 명철하다.",
+            "남을 이기는 자는 힘이 있으나, 스스로를 이기는 자는 강하다.",
+            "지족불욕(知足不辱), 만족할 줄 아는 사람은 욕됨이 없다."
+        ];
+
+        // 2. 뉴스 데이터 (이곳을 수정하여 뉴스를 추가하세요)
+        const newsData = [
+            { 
+                title: "실리콘밸리 AI 동향 리포트", 
+                summary: "최신 인공지능 안전성 및 규제 관련 뉴스 요약이 여기에 게시됩니다.", 
+                link: "#" 
+            }
+        ];
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // 도덕경 적용
+            const today = new Date();
+            const quoteIndex = today.getDate() % dailyQuotes.length;
+            document.getElementById("daily-quote").innerText = dailyQuotes[quoteIndex];
+
+            // 뉴스 카드 생성
+            const newsContainer = document.getElementById("news-container");
+            newsData.forEach(item => {
+                const card = `
+                    <div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm">
+                        <h4 class="font-bold mb-2">${item.title}</h4>
+                        <p class="text-sm text-slate-600 mb-4">${item.summary}</p>
+                        <a href="${item.link}" target="_blank" class="text-blue-700 text-sm font-semibold hover:underline">Read More →</a>
+                    </div>
+                `;
+                newsContainer.innerHTML += card;
+            });
+        });
+    </script>
 </body>
 </html>

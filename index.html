@@ -1,105 +1,156 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JangKIM | 연구 및 분석 아카이브</title>
+    <title>JY Consulting | ICT Policy & Safety V&V</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
-        body { font-family: 'Noto Sans KR', sans-serif; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
 
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <nav class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-xl font-bold text-slate-900">JangKIM</h1>
-            <ul class="flex gap-6 text-sm font-medium">
-                <li><a href="#news" class="hover:text-blue-700">News</a></li>
-                <li><a href="#research" class="hover:text-blue-700">Archive</a></li>
-                <li><a href="#daily" class="hover:text-blue-700">Daily Log</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-slate-200 z-50">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="text-xl font-bold tracking-tight text-indigo-600 cursor-pointer" onclick="window.scrollTo(0,0)">
+                JY CONSULTING
+            </div>
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex space-x-6 font-medium text-slate-600 text-sm">
+                <a href="#about" class="hover:text-indigo-600 transition">About</a>
+                <a href="#cases" class="hover:text-indigo-600 transition">Case Studies</a>
+                <a href="#clients" class="hover:text-indigo-600 transition">Clients & Regions</a>
+                <a href="#courses" class="hover:text-indigo-600 transition">Courses</a>
+                <a href="#contact" class="hover:text-indigo-600 transition">Contact</a>
+            </div>
+            <button class="lg:hidden p-2 text-slate-600" id="mobile-menu-btn">
+                <span class="text-2xl">☰</span>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-4">
+            <a href="#about" class="block font-medium text-slate-600">About</a>
+            <a href="#cases" class="block font-medium text-slate-600">Case Studies</a>
+            <a href="#clients" class="block font-medium text-slate-600">Clients & Regions</a>
+            <a href="#courses" class="block font-medium text-slate-600">Courses</a>
+            <a href="#contact" class="block font-medium text-slate-600">Contact</a>
+        </div>
+    </nav>
 
-    <main class="max-w-5xl mx-auto px-6 py-12 space-y-20">
-        
-        <section class="text-center py-12">
-            <h2 class="text-3xl md:text-4xl font-light text-slate-900 mb-4">안전-필수 소프트웨어 검증 및 확인</h2>
-            <p class="text-slate-600 mb-6">기준, 절차 및 방법론을 연구하는 아카이브입니다.</p>
-            <a href="https://orcid.org/0009-0005-4074-0622" target="_blank" class="inline-block bg-slate-900 text-white px-6 py-2 rounded-full text-sm hover:bg-slate-700 transition">
-                ORCID Profile 이동 →
-            </a>
-        </section>
-
-        <section id="news">
-            <h3 class="text-2xl font-bold mb-8 border-l-4 border-slate-900 pl-4">미국 실리콘밸리 AI 뉴스</h3>
-            <div id="news-container" class="grid md:grid-cols-2 gap-6">
-                </div>
-        </section>
-
-        <section id="research">
-            <h3 class="text-2xl font-bold mb-8 border-l-4 border-slate-900 pl-4">연구 아카이브</h3>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div class="bg-white p-6 rounded-lg border border-slate-200">
-                    <h4 class="font-bold mb-2">JY 방법론 (Development Methodology)</h4>
-                    <p class="text-sm text-slate-600 mb-4">안전 필수 소프트웨어 개발 및 검증 방법론 상세 논문 및 보고서</p>
-                    <a href="#" class="text-blue-700 text-sm font-semibold hover:underline">자료 보기 →</a>
+    <section id="about" class="pt-32 pb-20 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="flex-1 space-y-6 text-center md:text-left">
+                <h1 class="text-3xl md:text-4xl font-bold leading-tight text-slate-900">
+                    ICT 정책·안전필수 소프트웨어 <br>
+                    <span class="text-indigo-600">V&V 전문 컨설팅</span>
+                </h1>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    JY 컨설팅은 안전과 신뢰가 핵심 가치인 산업을 대상으로, ICT 정책 수립부터 안전필수 소프트웨어 검증·인증까지 이어지는 전체 흐름을 한눈에 보고 설계하는 것을 목표로 합니다.
+                    국내 연구기관과 규제기관 프로젝트에서 축적한 경험을 바탕으로, 한국 및 해외 클라이언트에게 규제 요건에 부합하는 실질적인 실행 전략을 제안합니다.
+                </p>
+                <p class="text-sm text-slate-500 leading-relaxed italic border-l-4 border-indigo-200 pl-4">
+                    JY consulting practice focuses on industries where safety and trust are mission-critical. We aim to design end-to-end strategies that connect ICT policy, system architecture, and safety-critical software verification and certification.
+                    Building on hands-on experience with national research institutes and regulatory-driven projects, we deliver practical, compliant implementation roadmaps for both Korean and international clients.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center gap-4 justify-center md:justify-start">
+                    <a href="https://orcid.org/0009-0005-4074-0622" target="_blank" class="px-8 py-3 bg-slate-900 text-white rounded-full font-semibold hover:bg-slate-800 transition">ORCID 프로필 보기</a>
                 </div>
             </div>
-        </section>
+            <div class="flex-1 w-full max-w-md bg-indigo-100 rounded-2xl aspect-square flex items-center justify-center shadow-lg">
+                <span class="text-indigo-300 text-8xl">👤</span>
+            </div>
+        </div>
+    </section>
 
-        <section id="daily" class="bg-slate-900 text-white p-8 rounded-xl text-center">
-            <h3 class="text-sm font-light uppercase tracking-widest mb-4 opacity-70">도덕경 일일 생활 실천</h3>
-            <p id="daily-quote" class="text-xl md:text-2xl font-light">Loading...</p>
-        </section>
+    <section id="cases" class="py-20 bg-slate-50 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center">주요 경험 분야 (Case Studies)</h2>
+            <div class="grid md:grid-cols-2 gap-8 text-slate-600">
+                <ul class="space-y-4 list-disc pl-5">
+                    <li>원자력 발전소 계측제어 시스템 소프트웨어 V&V</li>
+                    <li>소형 디지털 기기 안전성 평가 및 검증 지원</li>
+                    <li>공공·연구기관 ICT 정책·국제협력 프로젝트 자문</li>
+                    <li>해외 정부·기관 대상 디지털 전환·스마트 인프라 자문</li>
+                    <li class="italic text-slate-400 pt-4">([영어 강의 및 자문 가능합니다.]  보안 및 계약 조건에 따라 별도 논의 후 공유 가능합니다.)</li>
+                </ul>
+                <ul class="space-y-4 list-disc pl-5 border-l border-slate-200">
+                    <li>V&V consulting for nuclear power plant I&C software</li>
+                    <li>Safety assessment and verification support for small digital devices</li>
+                    <li>Advisory services for ICT policy and international cooperation projects in public and research sectors</li>
+                    <li>Consulting on digital transformation and smart infrastructure for overseas governments and institutions</li>
+                    <li class="italic text-slate-400 pt-4">(I am available for English-language lecture and consulting] Detailed case studies can be shared upon request.)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-    </main>
+    <section id="clients" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center">Clients & Regions</h2>
+            <div class="grid md:grid-cols-2 gap-8 text-slate-600 bg-white p-8 rounded-2xl border border-slate-100 shadow-sm">
+                <div>
+                    <h3 class="font-bold text-indigo-700 mb-4">대상 클라이언트</h3>
+                    <ul class="space-y-2 list-none">
+                        <li>중앙·지방 정부 및 공공기관</li>
+                        <li>규제기관 및 연구기관</li>
+                        <li>안전필수 시스템을 운영하는 원자력, 국방, 항공우주, 에너지·교통·의료·인프라 기업</li>
+                        <li>동남아·중앙아시아, 중동, 유럽 및 미국 등 해외 정부·공공 프로젝트 수행 기관</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-indigo-700 mb-4">Client Profiles</h3>
+                    <ul class="space-y-2 list-none italic text-sm">
+                        <li>Central and local governments, public agencies, and regulators</li>
+                        <li>National research institutes and laboratories</li>
+                        <li>Nuclear industry, National defense, Aerospace, Energy, transportation, healthcare, and infrastructure companies operating safety-critical systems</li>
+                        <li>International organizations and agencies executing public projects in regions such as Southeast, Central Asia, Middle East, Europe, and US</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer class="border-t border-slate-200 mt-20 py-8 text-center text-sm text-slate-500">
-        <p>Contact: jykim2252@gmail.com</p>
-        <p class="mt-2">&copy; 2026 JangKIM. All rights reserved.</p>
+    <section id="courses" class="py-20 bg-white px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold mb-16 text-center">교육 프로그램</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="border p-6 rounded-2xl bg-slate-50"><h3 class="font-bold text-indigo-700">IEC 61508 & IEC 62566</h3></div>
+                <div class="border p-6 rounded-2xl bg-slate-50"><h3 class="font-bold text-indigo-700">IEEE Std-1012 Framework</h3></div>
+                <div class="border p-6 rounded-2xl bg-slate-50"><h3 class="font-bold text-indigo-700">FPGA-기반 검증 사례</h3></div>
+                <div class="border p-6 rounded-2xl bg-slate-50"><h3 class="font-bold text-indigo-700">CPU-기반 검증 사례</h3></div>
+                <div class="border p-6 rounded-2xl bg-slate-50"><h3 class="font-bold text-indigo-700">SPM 11개 계획서</h3></div>
+                <div class="border p-6 rounded-2xl bg-slate-50"><h3 class="font-bold text-indigo-700">JY 방법론</h3></div>
+                <div class="border p-6 rounded-2xl bg-slate-50">
+                    <h3 class="font-bold text-indigo-700">[인공지능 비서 만들기]</h3>
+                    <ul class="text-xs text-slate-600 mt-2 space-y-1">
+                        <li>• 규제 chatbot (OpenAI/Claude)</li>
+                        <li>• Claude을 이용한  보고서 생성</li>
+                        <li>• 국내외 뉴스 브리핑 (Ollama)</li>
+                        <li>• AI Bible Study chatbot</li>
+                        <li>• 알기쉬운 Claude Connector 개인일정/이메일 요약</li>
+                        <li>• (정보수집) 주식트래커, 워치 등</li>
+                        <li>• 기독교/불교/유교/힌두교 매일 아침 명상 메시지</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-slate-900 text-slate-400 py-16 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-white text-2xl font-bold mb-6">Contact</h2>
+            <a href="mailto:jykim2252@gmail.com" class="text-indigo-400 hover:text-white text-lg font-medium">jykim2252@gmail.com</a>
+            <div class="mt-8 text-sm">© 2026 JY Consulting. All rights reserved.</div>
+        </div>
     </footer>
 
     <script>
-        // 1. 도덕경 데이터
-        const dailyQuotes = [
-            "상선약수(上善若水), 물은 만물을 이롭게 하되 다투지 않는다.",
-            "천하의 어려운 일은 반드시 쉬운 일에서 시작된다.",
-            "남을 아는 자는 지혜롭고, 스스로를 아는 자는 명철하다.",
-            "남을 이기는 자는 힘이 있으나, 스스로를 이기는 자는 강하다.",
-            "지족불욕(知足不辱), 만족할 줄 아는 사람은 욕됨이 없다."
-        ];
-
-        // 2. 뉴스 데이터 (이곳을 수정하여 뉴스를 추가하세요)
-        const newsData = [
-            { 
-                title: "실리콘밸리 AI 동향 리포트", 
-                summary: "최신 인공지능 안전성 및 규제 관련 뉴스 요약이 여기에 게시됩니다.", 
-                link: "#" 
-            }
-        ];
-
-        document.addEventListener("DOMContentLoaded", function() {
-            // 도덕경 적용
-            const today = new Date();
-            const quoteIndex = today.getDate() % dailyQuotes.length;
-            document.getElementById("daily-quote").innerText = dailyQuotes[quoteIndex];
-
-            // 뉴스 카드 생성
-            const newsContainer = document.getElementById("news-container");
-            newsData.forEach(item => {
-                const card = `
-                    <div class="bg-white p-6 rounded-lg border border-slate-200 shadow-sm">
-                        <h4 class="font-bold mb-2">${item.title}</h4>
-                        <p class="text-sm text-slate-600 mb-4">${item.summary}</p>
-                        <a href="${item.link}" target="_blank" class="text-blue-700 text-sm font-semibold hover:underline">Read More →</a>
-                    </div>
-                `;
-                newsContainer.innerHTML += card;
-            });
-        });
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+        menu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => menu.classList.add('hidden')));
     </script>
 </body>
 </html>
